@@ -3,8 +3,10 @@ import './intro.css'
 import IntroBlock from '../IntroBlock/IntroBlock'
 import Instructions from '../Instructions/Instruction'
 import GameButton from '../GameButton/GameButton'
+import shuffleArray from '../../util/ArrayShuffle'
 
 let characters =  ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H','A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+characters = shuffleArray(characters)
 
 const Intro = props => {
     const [instruction, setInstruction] = useState(false)
@@ -13,6 +15,7 @@ const Intro = props => {
     const [start, setStart] = useState(false)
     const [clickedLib, setClickedLib] = useState([])
     const [reset, setReset] = useState(false)
+    let changeStyleTimerToClear = useRef(false)
 
     const changeStyle = () => {
         setTimeout(() => {
@@ -64,9 +67,9 @@ const Intro = props => {
             {game
                 ?
                 <div className={`intro-blocks difficulty-back flame ${game ? 'rotateY' : ''}`}>
-                    <button onClick={() => setStart(true)} className='difficulty flame'>Casual</button>
-                    <button className='difficulty flame'>Medium</button>
-                    <button className='difficulty flame'>Hard</button>
+                    <button onClick={() => setStart(true)} className='difficulty flame'>Start</button>
+                    {/* <button className='difficulty flame'>Medium</button>
+                    <button className='difficulty flame'>Hard</button> */}
                 </div>
                 :
                 null
