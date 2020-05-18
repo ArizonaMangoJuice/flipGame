@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.dark-purple{
+  background-color: #242038;
+}
+
+.slate-blue{
+  background-color: #725AC1;
+}
+
+.zomp{
+  background-color: #2CA58D;
+}
+
+.flame{
+  background-color: #E4572E;
+}
+
+.relative{
+  position: relative;
+}
